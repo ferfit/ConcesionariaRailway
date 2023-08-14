@@ -7,7 +7,14 @@ exports.Cliente = void 0;
 const mongoose_1 = __importDefault(require("mongoose"));
 const mongoose_paginate_v2_1 = __importDefault(require("mongoose-paginate-v2"));
 const schema = new mongoose_1.default.Schema({
-    nombre: { type: String }, apellido: { type: String }, email: { type: String }, celular: { type: String }, nota: { type: String }, estado: { type: Boolean },
+    nombre: { type: String },
+    apellido: { type: String },
+    email: { type: String },
+    celular: { type: String },
+    nota: { type: String },
+    estado: { type: Boolean },
+    metodo: { type: mongoose_1.default.Schema.Types.ObjectId, ref: 'Metododecaptacion' },
+    tipo: { type: mongoose_1.default.Schema.Types.ObjectId, ref: 'Tipocliente' },
     creadoPor: { type: mongoose_1.default.Schema.Types.ObjectId, ref: 'Usuario' },
     ultimaModificacionPor: { type: mongoose_1.default.Schema.Types.ObjectId, ref: 'Usuario' },
 }, { timestamps: true });
